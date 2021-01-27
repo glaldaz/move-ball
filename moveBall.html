@@ -1,0 +1,72 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+
+<div id="ball2" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:red"></div>
+
+<script>
+const MAX_VELOCITY = 10;
+const WINDOW_MAX_X = 650;
+const WINDOW_MAX_Y = 770;
+
+velocity = Math.random() * MAX_VELOCITY; 
+velocityX = Math.random() * velocity;
+velocityY = Math.sqrt(velocity*velocity - velocityX*velocityX);
+positionX = WINDOW_MAX_X * Math.random();
+positionY = WINDOW_MAX_Y * Math.random();
+ball = document.getElementById('ball');
+
+velocity2 = Math.random() * MAX_VELOCITY; 
+velocityX2 = Math.random() * velocity2;
+velocityY2 = Math.sqrt(velocity2*velocity2 - velocityX2*velocityX2);
+positionX2 = WINDOW_MAX_X * Math.random();
+positionY2 = WINDOW_MAX_Y * Math.random();
+ball2 = document.getElementById('ball2');
+// YOUR CODE 
+// ----------------
+let moveBall = function(){
+  // Edge detection
+  if(positionX > WINDOW_MAX_X || positionX < 0){
+    velocityX *= -1;
+  }
+  if(positionY > WINDOW_MAX_Y || positionY < 0){
+    velocityY *= -1
+  }
+
+  // Position update
+  positionX = positionX + velocityX;
+  positionY = positionY + velocityY;
+  ball.style.left = positionX + 'px';
+  ball.style.top = positionY + 'px';
+
+  // Edge detection
+  if(positionX2 > WINDOW_MAX_X || positionX2 < 0){
+    velocityX2 *= -1;
+  }
+  if(positionY2 > WINDOW_MAX_Y || positionY2 < 0){
+    velocityY2 *= -1
+  }
+
+  // Position update
+  positionX2 = positionX2 + velocityX2;
+  positionY2 = positionY2 + velocityY2;
+  ball2.style.left = positionX2 + 'px';
+  ball2.style.top = positionY2 + 'px';
+}
+
+setInterval(moveBall, 1);
+</script>
