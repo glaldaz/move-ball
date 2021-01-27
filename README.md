@@ -1,8 +1,8 @@
 # move-ball
-A small HTML animation with balls bouncing around the page
+A small HTML animation with balls bouncing around the page.
 
 ## Description
-This project is from the MIT xPRO Professional Certificate in Coding: Full Stack Development with MERN
+This project is from the MIT xPRO Professional Certificate in Coding: Full Stack Development with MERN.
 
 I was tasked with creating an HTML Div element that displayed a ball on the page to move. Starting code containing the div element and the basic code to make the ball move across the screen was provided.
 
